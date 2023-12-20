@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import SignUp from './SignUp';
+import { Routes, Route} from "react-router-dom"
 
 function Copyright(props) {
   return (
@@ -26,7 +28,6 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -39,6 +40,9 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+  function SignUpClickListener(){
+     
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -52,7 +56,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} src='../../public/Manas_logo.png'>
             
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -98,7 +102,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
