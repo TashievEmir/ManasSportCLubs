@@ -8,7 +8,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-//import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -81,7 +80,7 @@ export default function SignUp() {
                   autoComplete="family-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} >
                 <TextField
                   required
                   fullWidth
@@ -91,7 +90,7 @@ export default function SignUp() {
                   autoComplete="faculty-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} >
                 <TextField
                   required
                   fullWidth
@@ -101,7 +100,7 @@ export default function SignUp() {
                   autoComplete="department-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} >
                 <TextField
                   required
                   fullWidth
@@ -111,17 +110,7 @@ export default function SignUp() {
                   autoComplete="telefon-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -141,7 +130,7 @@ export default function SignUp() {
                   autoComplete="email"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -152,12 +141,18 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  name="repeatPassword"
+                  label="Repeat Password"
+                  type="repeatPassword"
+                  id="repeatPassword"
+                  autoComplete="repeatPassword"
                 />
               </Grid>
+              
             </Grid>
             <Button
               type="submit"

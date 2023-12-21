@@ -12,36 +12,18 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-
 const defaultTheme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-  function SignUpClickListener(){
-     
-  }
-
-  return (
+export default function ResetPassword(){
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        console.log({
+          email: data.get('email'),
+          password: data.get('password'),
+        });
+      };
+    return(
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -69,21 +51,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            />    
             <Button
               type="submit"
               fullWidth
@@ -93,21 +61,11 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="/forgotPassword" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+              
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
-  );
+    )
 }
