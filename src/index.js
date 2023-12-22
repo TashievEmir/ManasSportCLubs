@@ -4,7 +4,7 @@ import App from './App';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import SignIn from './components/authentification/SignIn';
 import SignUp from './components/authentification/SignUp';
-import ResetPassword from './components/authentification/ResetPassword';
+import { ForgotPassword } from './components/authentification/ForgotPassword';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,7 +24,7 @@ root.render(
     </Routes>
     <Routes>
       <Route path="/resetPassword"
-       element = {<ResetPassword/>} />
+       element = {<ForgotPassword/>} />
     </Routes>
     <Routes>
       <Route path="/main"

@@ -1,20 +1,19 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {Avatar, Button, CssBaseline, Box, TextField, FormControlLabel, Checkbox, Link} from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import EmailRequest from './EmailRequest';
+import manasLogo from '../../assets/manas_logo.png';
+import EmailCodeRequest from './EmailCodeRequest';
 
-export default function ForgotPassword(){
+const defaultTheme = createTheme();
+
+export function ForgotPassword(){
+    const [submitted, setSubmitted] = React.useState(false)
     return(
-        <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -25,43 +24,14 @@ export default function ForgotPassword(){
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} src='../../public/Manas_logo.png'>
-            
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />    
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Эстеп калдым
-            </Button>
-            <Grid container>
-              
-            </Grid>
-          </Box>
+          <Avatar src={manasLogo} alt='manas logo' sx={{ m: 1, bgcolor: 'secondary.main' }} />
+          
+          {
+            submitted ?
+            <EmailCodeRequest/> :
+            <EmailRequest setSubmitted={setSubmitted}/>
+          }
+
         </Box>
       </Container>
     </ThemeProvider>

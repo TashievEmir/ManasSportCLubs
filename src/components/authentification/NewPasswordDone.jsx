@@ -26,29 +26,10 @@ export default function ResetPassword(){
     return(
     <div>
             <Typography component="h1" variant="h5">
-              Sign in
+              Your Password reseted succesfully!
             </Typography>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="newPassword"
-                label="New Password"
-                name="newPassword"
-                autoComplete="newPassword"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="repeatPassword"
-                label="Repeat Password"
-                name="repeatPassword"
-                autoComplete="repeatPassword"
-                autoFocus
-              />    
+                
               <Button
                 type="submit"
                 fullWidth
