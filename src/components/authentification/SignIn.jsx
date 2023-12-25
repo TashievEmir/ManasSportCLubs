@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import manasLogo from '../../assets/manas_logo.png';
 
 function Copyright(props) {
   return (
@@ -37,9 +38,6 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
-  function SignUpClickListener(){
-     
-  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -53,11 +51,10 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} src='../../public/Manas_logo.png'>
-            
-          </Avatar>
+          <Avatar src={manasLogo} alt='manas logo' sx={{ m: 1, bgcolor: 'secondary.main', height: 100, width: 100 }} />
+
           <Typography component="h1" variant="h5">
-            Sign in
+            Кирүү
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -82,7 +79,7 @@ export default function SignIn() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Мени жатта"
             />
             <Button
               type="submit"
@@ -90,17 +87,17 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Кирүү
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="/resetPassword" variant="body2">
-                  Forgot password?
+                  Парольду унутуңузбу?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"Катталуу"}
                 </Link>
               </Grid>
             </Grid>

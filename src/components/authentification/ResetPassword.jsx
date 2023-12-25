@@ -1,32 +1,24 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const defaultTheme = createTheme();
 
-export default function ResetPassword(){
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+export default function ResetPassword({setComponent}){
+  const handleSubmit = (event) => {
+    if(true){
+      setComponent('NewPasswordDone')
+    }
+  };
     return(
     <div>
             <Typography component="h1" variant="h5">
-              Sign in
+              Жаңы пароль түзүңүз
             </Typography>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
               <TextField
@@ -55,10 +47,15 @@ export default function ResetPassword(){
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Submit
+                Тастыктоо
               </Button>
-              <Grid container>               
+              <Grid container>
+              <Grid item xs>
+                <Link href="/" variant="body2">
+                Парольду эстедим
+                </Link>
               </Grid>
+            </Grid>
             </Box>
     </div>
     )

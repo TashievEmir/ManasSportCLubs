@@ -7,11 +7,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import EmailRequest from './EmailRequest';
 import manasLogo from '../../assets/manas_logo.png';
 import EmailCodeRequest from './EmailCodeRequest';
+import ResetPassword from './ResetPassword';
+import NewPasswordDone from './NewPasswordDone';
 
 const defaultTheme = createTheme();
 
 export function ForgotPassword(){
-    const [submitted, setSubmitted] = React.useState(false)
+    const [component, setComponent] = React.useState('EmailRequest')
     return(
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -24,13 +26,11 @@ export function ForgotPassword(){
             alignItems: 'center',
           }}
         >
-          <Avatar src={manasLogo} alt='manas logo' sx={{ m: 1, bgcolor: 'secondary.main' }} />
-          
-          {
-            submitted ?
-            <EmailCodeRequest/> :
-            <EmailRequest setSubmitted={setSubmitted}/>
-          }
+          <Avatar src={manasLogo} alt='manas logo' sx={{ m: 1, bgcolor: 'secondary.main', height: 100, width:100 }} />           
+          {component == 'EmailCodeRequest' && <EmailCodeRequest setComponent={setComponent}/>}
+          {component == 'EmailRequest' && <EmailRequest setComponent={setComponent}/>} 
+          {component == 'ResetPassword' && <ResetPassword setComponent={setComponent}/>}  
+          {component == 'NewPasswordDone' && <NewPasswordDone setComponent={setComponent}/>}
 
         </Box>
       </Container>
